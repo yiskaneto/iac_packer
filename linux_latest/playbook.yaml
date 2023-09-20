@@ -1,6 +1,6 @@
 ---
 - name: 'Provision Image'
-  hosts: default
+  hosts: all
   become: true
   vars:
     packages: [postgresql15]
