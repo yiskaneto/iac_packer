@@ -6,7 +6,7 @@ build {
   }
 
   provisioner "ansible" {
-      playbook_file = "ansible/playbook.yml"
+      playbook_file = "./playbook.yml"
   }
 
   post-processor "shell-local" {
