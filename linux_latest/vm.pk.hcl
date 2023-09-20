@@ -1,9 +1,10 @@
 source "amazon-ebs" "httpd" {
-  ami_name      = "PACKER-DEMO-${local.app_name}"
-  instance_type = "t2.micro"
-  region        = var.aws_region
-  source_ami    = "${var.ami_id}"
-  ssh_username  = "ec2-user"
+  skip_create_ami = true
+  ami_name        = "PACKER-DEMO-${local.app_name}"
+  instance_type   = "t2.micro"
+  region          = var.aws_region
+  source_ami      = "${var.ami_id}"
+  ssh_username    = "ec2-user"
   tags = {
     Env  = "DEMO"
     Name = "PACKER-DEMO-${var.app_name}"
