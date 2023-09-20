@@ -4,6 +4,10 @@ packer {
       source  = "github.com/hashicorp/amazon"
       version = "~> 1"
     }
+    ansible = {
+      source  = "github.com/hashicorp/ansible"
+      version = "~> 1"
+    }
   }
 }
 
@@ -34,7 +38,7 @@ build {
   }
 
   provisioner "ansible" {
-      playbook_file = "./playbook.yml"
+      playbook_file = "./playbook.yaml"
   }
 
   post-processor "shell-local" {
