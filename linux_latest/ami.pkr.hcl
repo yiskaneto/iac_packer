@@ -1,3 +1,16 @@
+packer {
+  required_plugins {
+    amazon = {
+      source  = "github.com/hashicorp/amazon"
+      version = "~> 1"
+    }
+  }
+}
+
+locals {
+    app_name = "httpd"
+}
+
 source "amazon-ebs" "httpd" {
   skip_create_ami = true
   ami_name        = "PACKER-DEMO-${local.app_name}"
@@ -15,7 +28,7 @@ build {
   sources = ["source.amazon-ebs.httpd"]
 
   provisioner "shell" {
-    script = "script/script.sh"
+    script = "scripts/script.sh"
   }
 
   post-processor "shell-local" {
