@@ -8,7 +8,7 @@ variable "ami_id" {
   default = "ami-073e64e4c237c08ad" // Amazon Linux 2023 AMI
 }
 
-variable "app_name" {
+variable "purpose" {
   type    = string
-  default = "general-use"
+  default = "demo"
 }
