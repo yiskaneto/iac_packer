@@ -8,6 +8,11 @@ variable "ami_id" {
   default = "ami-073e64e4c237c08ad" // Amazon Linux 2023 AMI
 }
 
+variable "sg_id" {
+  type    = string
+  default = "sg-08094fd0b849d705d" // It has to allow ssh access
+}
+
 variable "purpose" {
   type    = string
   default = "demo"
