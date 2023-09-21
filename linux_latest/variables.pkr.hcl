@@ -20,5 +20,5 @@ variable "skip_create_ami" {
 
 variable "purpose" {
   type    = string
-  default = "demo"
+  default = "Linux2023"
 }
