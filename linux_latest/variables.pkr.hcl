@@ -13,6 +13,11 @@ variable "sg_id" {
   default = "sg-08094fd0b849d705d" // It has to allow ssh access
 }
 
+variable "skip_create_ami" {
+  type    = string
+  default = env("CREATE_AMI")
+}
+
 variable "purpose" {
   type    = string
   default = "demo"

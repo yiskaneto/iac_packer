@@ -3,7 +3,7 @@ locals {
 }
 
 source "amazon-ebs" "demo" {
-  skip_create_ami      = true
+  skip_create_ami      = var.skip_create_ami
   source_ami           = var.ami_id
   ami_name             = "PACKER-DEMO-${local.purpose}"
   ami_description      = "This is the blueprint I use to generate other AMIs"

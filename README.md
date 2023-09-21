@@ -20,13 +20,12 @@ Contains packer configurations
 
 1. If developing locally then make sure to run `packer init` on the project folder to ensure we installed the required plugins, see the packer block on the `ami.pkr.hcl` file.
 
-1. Always set to `true` the `skip_create_ami` parameter on the `amazon-ebs` block to verify everything goes fine, once we confirm all the installation goes ok set this parameter to false.
-
+1. Always set to `true` the `CREATE_AMI` environment variable before running `validate` and `build`, once the test goes ok set the value to `false`
 1. Use the `-debug` flag in case you need to inspect each step.
 
 ## Workflow
 
 1. packer init .
 1. packer fmt .
-1. packer validate .
-1. packer build . (Don't forget about point #1 of the "Importan notes" section)
+1. CREATE_AMI=true && packer validate .
+1. CREATE_AMI=true && time packer validate  // (Change value to false once all the test passes)
