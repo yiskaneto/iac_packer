@@ -25,7 +25,17 @@ Contains packer configurations
 
 ## Workflow
 
-1. packer init .
-1. packer fmt .
-1. CREATE_AMI=true && packer validate .
-1. CREATE_AMI=true && time packer validate  // (Change value to false once all the test passes)
+1. Init and Verify
+
+```bash
+packer init .
+packer fmt .
+export SKIP_CREATE_AMI=true && packer validate -var aws_region=<aws region> .
+packer validate .
+```
+
+1. Build:
+
+```bash
+export SKIP_CREATE_AMI=false && time packer build .
+```
