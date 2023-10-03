@@ -4,7 +4,7 @@ locals {
 
 data "amazon-ami" "amzn2" {
     filters = {
-        name = "al2023-ami-*-kernel-*-x86_64" // Amazon Linux 2023
+        name = "al2023-ami-2023*-kernel-*-x86_64" // Amazon Linux 2023
     }
     owners = ["137112412989"] // Official AWS account
     most_recent = true
