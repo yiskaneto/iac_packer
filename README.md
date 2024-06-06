@@ -6,15 +6,15 @@ Contains packer configurations
 
 1. Have the following folder structure for each project:
 
-  ```bash
-  project_folder:
-    - scripts/script_<purpose>.sh
-    - ansible/playbook.yaml
-    - builder.pkr.hcl
-    - plugins.pkr.hcl
-    - sources.pkr.hcl
-    - variables.pkr.hcl
-  ```
+    ```bash
+    project_folder:
+      - scripts/script_<purpose>.sh
+      - ansible/playbook.yaml
+      - builder.pkr.hcl
+      - plugins.pkr.hcl
+      - sources.pkr.hcl
+      - variables.pkr.hcl
+    ```
 
 ## Important notes
 
