@@ -18,7 +18,10 @@ Contains packer configurations
 
 ## Important notes
 
-1. If developing locally then make sure to run `packer init` on the project folder to ensure we installed the required plugins, see the packer block on the `ami.pkr.hcl` file.
+1. If developing locally then run the following commands to ensure the required plugins are installed (see the `packer` block on the `plugins.pkr.hcl` file whithin the project folder):
+    1. `cd <project_name>`
+    1. `packer init plugins.pkr.hcl`
+    1. run `packer init` on the project folder,
 
 1. Always set to `true` the `CREATE_AMI` environment variable before running `validate` and `build`, once the test goes ok set the value to `false`
 1. Use the `-debug` flag in case you need to inspect each step.
