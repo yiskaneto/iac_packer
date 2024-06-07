@@ -2,7 +2,7 @@ locals {
   purpose = var.purpose
 }
 
-data "amazon-ami" "amzn2" {
+data "amazon-ami" "al2023" {
   filters = {
     name = "al2023-ami-2023*-kernel-*-x86_64" // Amazon Linux 2023
   }
@@ -12,9 +12,9 @@ data "amazon-ami" "amzn2" {
 
 source "amazon-ebs" "demo" {
   skip_create_ami      = var.skip_create_ami
-  source_ami           = data.amazon-ami.amzn2.id
+  source_ami           = data.amazon-ami.al2023.id
   ami_name             = "${local.purpose}-AMI"
-  ami_description      = "Linux 2023 with some tools I usually use for check other services"
+  ami_description      = "Linux 2023 with some extra tools I usually use for check other AWS services"
   instance_type        = "t2.micro"
   region               = var.aws_region
   security_group_id    = var.sg_id
