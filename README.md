@@ -18,6 +18,9 @@ Contains packer configurations
 
 ## Important notes
 
+1. Requirements:
+   1. Make sure to declare the `AWS_REGION` enviroment variable before continuing.
+
 1. If developing locally then run the following commands to ensure the required plugins are installed (see the `packer` block on the `plugins.pkr.hcl` file whithin the project folder):
     1. `cd <project_name>`
     1. `packer init plugins.pkr.hcl`
