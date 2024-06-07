@@ -9,7 +9,7 @@ variable "sg_id" {
 
 variable "skip_create_ami" {
   type    = string
-  default = env("CREATE_AMI")
+  default = env("SKIP_CREATE_AMI")
 }
 
 variable "purpose" {

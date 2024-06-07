@@ -32,7 +32,7 @@ Contains packer configurations
 ```bash
 time packer init .
 time packer fmt .
-export SKIP_CREATE_AMI=true && packer validate -var aws_region=<aws region> .
+export SKIP_CREATE_AMI=true && packer validate -var aws_region=${AWS_REGION} .
 packer validate .
 ```
 
