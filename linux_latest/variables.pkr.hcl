@@ -1,5 +1,6 @@
 variable "aws_region" {
   type = string
+  default = env("AWS_REGION")
 }
 
 variable "sg_id" {
