@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  become_user: root
+  become_method: sudo
+  vars:
+    packages: [postgresql15]
+
+  tasks:
+    - name: "Install {{ packages }}"
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: latest
+      with_items: "{{ packages }}"
