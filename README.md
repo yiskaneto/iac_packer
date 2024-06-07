@@ -21,9 +21,8 @@ Contains packer configurations
 1. If developing locally then run the following commands to ensure the required plugins are installed (see the `packer` block on the `plugins.pkr.hcl` file whithin the project folder):
     1. `cd <project_name>`
     1. `packer init plugins.pkr.hcl`
-    1. run `packer init` on the project folder,
 
-1. Always set to `true` the `CREATE_AMI` environment variable before running `validate` and `build`, once the test goes ok set the value to `false`
+1. Always set the value if the  `SKIP_CREATE_AMI` environment variable to `true` before running `validate` and `build`, once the test goes ok set the value to `false`
 1. Use the `-debug` flag in case you need to inspect each step.
 
 ## Workflow
@@ -31,8 +30,8 @@ Contains packer configurations
 1. Init and Verify
 
 ```bash
-packer init .
-packer fmt .
+time packer init .
+time packer fmt .
 export SKIP_CREATE_AMI=true && packer validate -var aws_region=<aws region> .
 packer validate .
 ```
