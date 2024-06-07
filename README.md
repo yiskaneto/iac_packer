@@ -33,7 +33,7 @@ Contains packer configurations
 time packer init .
 time packer fmt .
 export SKIP_CREATE_AMI=true && packer validate -var aws_region=${AWS_REGION} .
-packer validate .
+time packer validate .
 ```
 
 1. Build:
