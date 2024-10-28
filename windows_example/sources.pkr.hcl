@@ -10,13 +10,13 @@ locals {
 
 data "amazon-ami" "aws-elasticbeanstalk-amzn-latest" {
   filters = {
-    name = "aws-elasticbeanstalk-amzn-2024.10.09.x86_64-WindowsServer2019-V2-hvm-2024-10-13T22-50-20.812Z" // The full name at the time when creating this image was aws-elasticbeanstalk-amzn-2024.10.09.x86_64-WindowsServer2019-V2-hvm-2024-10-13T22-50-20.812Z but it may change in the future.
+    name = "aws-elasticbeanstalk-amzn-2024.10.09.x86_64-WindowsServer2019-V2-hvm-2024-10-13T22-49-38.951Z" // The full name at the time when creating this image was aws-elasticbeanstalk-amzn-2024.10.09.x86_64-WindowsServer2019-V2-hvm-2024-10-13T22-50-20.812Z but it may change in the future.
   }
-  owners      = ["732788773938"] // This is one fo the official Microsoft AWS Account IDs
+  owners      = ["052272138977"] // This is one fo the official Microsoft AWS Account IDs
   most_recent = true
 }
 
-source "amazon-ebs" "widnows_demo" {
+source "amazon-ebs" "windows_demo" {
   skip_create_ami = var.skip_create_ami
   source_ami      = data.amazon-ami.aws-elasticbeanstalk-amzn-latest.id
   ami_name        = "${local.purpose}-AMI"
